@@ -1,0 +1,53 @@
+{
+    "name": "ContactLog",
+    "type": "object",
+    "properties": {
+      "property_id": {
+        "type": "string",
+        "description": "ID of the related property"
+      },
+      "contact_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Date of contact"
+      },
+      "contact_method": {
+        "type": "string",
+        "enum": [
+          "phone",
+          "email",
+          "text",
+          "in_person"
+        ],
+        "description": "Method of contact"
+      },
+      "outcome": {
+        "type": "string",
+        "enum": [
+          "no_answer",
+          "answered",
+          "voicemail",
+          "callback_requested",
+          "not_interested",
+          "interested",
+          "meeting_scheduled"
+        ],
+        "description": "Result of contact attempt"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Details about the conversation"
+      },
+      "follow_up_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Scheduled follow-up date"
+      }
+    },
+    "required": [
+      "property_id",
+      "contact_date",
+      "contact_method",
+      "outcome"
+    ]
+  }

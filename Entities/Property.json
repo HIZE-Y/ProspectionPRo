@@ -1,0 +1,96 @@
+{
+    "name": "Property",
+    "type": "object",
+    "properties": {
+      "address": {
+        "type": "string",
+        "description": "Full property address"
+      },
+      "city": {
+        "type": "string",
+        "description": "City where property is located"
+      },
+      "price": {
+        "type": "number",
+        "description": "Listed price in CAD"
+      },
+      "posting_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Date the property was first posted on DuProprio"
+      },
+      "property_type": {
+        "type": "string",
+        "enum": [
+          "house",
+          "condo",
+          "townhouse",
+          "duplex",
+          "land"
+        ],
+        "description": "Type of property"
+      },
+      "bedrooms": {
+        "type": "number",
+        "description": "Number of bedrooms"
+      },
+      "bathrooms": {
+        "type": "number",
+        "description": "Number of bathrooms"
+      },
+      "square_feet": {
+        "type": "number",
+        "description": "Property size in square feet"
+      },
+      "owner_name": {
+        "type": "string",
+        "description": "Name of property owner"
+      },
+      "owner_phone": {
+        "type": "string",
+        "description": "Owner's phone number"
+      },
+      "owner_email": {
+        "type": "string",
+        "description": "Owner's email address"
+      },
+      "duproprio_url": {
+        "type": "string",
+        "description": "URL to the DuProprio listing"
+      },
+      "lead_status": {
+        "type": "string",
+        "enum": [
+          "new",
+          "ready_to_contact",
+          "contacted",
+          "interested",
+          "not_interested",
+          "converted",
+          "sold_elsewhere"
+        ],
+        "default": "new",
+        "description": "Current lead status"
+      },
+      "last_contact_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Date of last contact attempt"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Agent notes about the property or contact"
+      },
+      "is_still_listed": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether property is still active on DuProprio"
+      }
+    },
+    "required": [
+      "address",
+      "price",
+      "posting_date",
+      "owner_name"
+    ]
+  }
